@@ -1,13 +1,15 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
 `;
 
 export const Label = styled.label`
-  font-size: 0.9rem;
-  display: block;
-  margin-bottom: 0.3rem;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #333;
 `;
 
 export const Wrapper = styled.div`
@@ -16,16 +18,23 @@ export const Wrapper = styled.div`
 
 export const Field = styled.input`
   width: 100%;
-  padding: 0.75rem;
+  padding: 10px 40px 10px 12px;
   border: 1px solid #ccc;
   border-radius: 8px;
-  font-size: 1rem;
+  font-size: 14px;
 `;
 
-export const ToggleIcon = styled.span`
+export const ToggleIcon = styled.button`
   position: absolute;
-  right: 1rem;
   top: 50%;
+  right: 12px;
   transform: translateY(-50%);
+  background: none;
+  border: none;
   cursor: pointer;
+
+  img {
+    width: 20px;
+    height: 20px;
+  }
 `;

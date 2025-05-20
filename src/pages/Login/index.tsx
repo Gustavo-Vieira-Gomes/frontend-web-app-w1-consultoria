@@ -1,14 +1,14 @@
 import React from "react";
 import { Container } from "./style";
 import LoginForm from "../../components/LoginForm";
-import LoginAside from "../../components/LoginAside";
+import Aside from "../../components/Aside";
 
 
 const LoginPage: React.FC = () => {
   return (
     <Container>
       <LoginForm />
-      <LoginAside />
+      <Aside />
     </Container>
   );
 };

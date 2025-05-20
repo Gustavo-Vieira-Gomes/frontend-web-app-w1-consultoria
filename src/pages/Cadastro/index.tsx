@@ -1,6 +1,6 @@
 import React from "react";
 import { CadastroContainer, FormSection, Title, LinkText } from "./style";
-import LoginAside from "../../components/LoginAside";
+import Aside from "../../components/Aside";
 import Input from "../../components/Input";
 import SubmitButton from "../../components/SubmitButton";
 import { Link } from "react-router-dom";
@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 const CadastroPage: React.FC = () => {
   return (
     <CadastroContainer>
-      <LoginAside />
+      <Aside />
       <FormSection>
         <Title>Faça seu cadastro</Title>
         <form>

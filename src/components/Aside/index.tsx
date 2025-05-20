@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Logo, Description } from "./style";
 
-const LoginAside: React.FC = () => {
+const Aside: React.FC = () => {
   return (
     <Container>
       <Logo src="./W1_White.png" alt="Logo" />
@@ -13,4 +13,4 @@ const LoginAside: React.FC = () => {
   );
 };
 
-export default LoginAside;
+export default Aside;
