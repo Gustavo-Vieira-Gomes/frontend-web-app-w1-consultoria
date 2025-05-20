@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom"; // certifique-se de importar!
+import { Link } from "react-router-dom";
 import SubmitButton from "../../components/SubmitButton";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
