@@ -26,7 +26,10 @@ export const Middle = styled.div`
 `;
 
 export const Bottom = styled.div`
+  display: flex;
+  justify-content: space-around;
   padding: 16px;
-  border-top: 1px solid #333;
+  border-top: 1px solid #444;
 `;
+
 
