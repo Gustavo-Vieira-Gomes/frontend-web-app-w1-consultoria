@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Container, Logo, Top, Middle, Bottom } from "./style";
 import MenuItem from "./MenuItem";
-import { ChartNoAxesCombined, Building, TrendingUp, CircleDollarSign, LogOut, Landmark , User, Banknote} from "lucide-react";
+import { ChartNoAxesCombined, Building, TrendingUp, CircleDollarSign, LogOut, Landmark , User, Banknote, ChevronUp} from "lucide-react";
 import { Link } from "react-router-dom";
 
 const MenuLateral: React.FC = () => {
@@ -20,6 +20,9 @@ const MenuLateral: React.FC = () => {
           icon={CircleDollarSign}
           label="Patrimônios"
           onClick={() => setPatrimoniosOpen(!patrimoniosOpen)}
+          iconDropdown={ChevronUp}
+          rotateIcon={patrimoniosOpen}
+          active={patrimoniosOpen}
         />
         {patrimoniosOpen && (
           <div style={{ paddingLeft: 24 }}>
@@ -31,9 +34,9 @@ const MenuLateral: React.FC = () => {
       </Middle>
 
       <Bottom>
-        <MenuItem icon={User} label="Perfil" />
+        <MenuItem icon={User} label="Perfil" onlyIcon />
         <Link to="/login">
-          <MenuItem icon={LogOut} label="Sair" />
+          <MenuItem icon={LogOut} label="Sair" onlyIcon />
         </Link>
       </Bottom>
     </Container>
