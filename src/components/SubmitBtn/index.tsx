@@ -7,8 +7,8 @@ interface Props {
   onClick?: () => void;
 }
 
-const SubmitButton: React.FC<Props> = ({ text, type = "submit", onClick }) => {
+const SubmitBtn: React.FC<Props> = ({ text, type = "submit", onClick }) => {
   return <Button type={type} onClick={onClick}>{text}</Button>;
 };
 
-export default SubmitButton;
+export default SubmitBtn;

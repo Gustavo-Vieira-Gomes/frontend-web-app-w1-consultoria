@@ -9,9 +9,19 @@ type Props = {
   placeholder?: string;
   register?: any;
   name?: string;
+  value?: string;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
-const Input: React.FC<Props> = ({ label, type = "text", placeholder, register, name }) => {
+const Input: React.FC<Props> = ({
+  label,
+  type = "text",
+  placeholder,
+  register,
+  name,
+  value,
+  onChange,
+}) => {
   const [showPassword, setShowPassword] = useState(false);
   const isPassword = type === "password";
   const inputType = isPassword ? (showPassword ? "text" : "password") : type;
@@ -24,6 +34,8 @@ const Input: React.FC<Props> = ({ label, type = "text", placeholder, register, n
           type={inputType}
           placeholder={placeholder}
           {...(register && name ? register(name) : {})}
+          {...(value !== undefined ? { value } : {})}
+          {...(onChange ? { onChange } : {})}
         />
         {isPassword && (
           <ToggleIcon type="button" onClick={() => setShowPassword(!showPassword)}>
@@ -37,5 +49,6 @@ const Input: React.FC<Props> = ({ label, type = "text", placeholder, register, n
     </Container>
   );
 };
+
 
 export default Input;

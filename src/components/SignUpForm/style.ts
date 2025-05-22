@@ -1,4 +1,5 @@
 import styled, { keyframes } from 'styled-components';
+import theme from '../../styles/styled-theme';
 
 const slideIn = keyframes`
   from {
@@ -24,16 +25,17 @@ export const FormSection = styled.div`
 `;
 
 export const Title = styled.h2`
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.5rem;
 `;
 
 export const LinkText = styled.p`
-  margin-top: 1.5rem;
+  margin-top: 1rem;
   font-size: 0.9rem;
 
   a {
-    color: #007acc;
+    color: ${theme.color.main.primary.default};
     text-decoration: none;
+    text-underline: none;
 
     &:hover {
       text-decoration: underline;

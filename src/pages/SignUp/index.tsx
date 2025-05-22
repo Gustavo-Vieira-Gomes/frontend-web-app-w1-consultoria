@@ -2,13 +2,13 @@ import React from "react";
 import { CadastroContainer} from "./style";
 import Aside from "../../components/Aside";
 
-import CadastroForm from "../../components/CadastroForm";
+import SignUpForm from "../../components/SignUpForm";
 
 const CadastroPage: React.FC = () => {
   return (
     <CadastroContainer>
       <Aside />
-      <CadastroForm />
+      <SignUpForm />
     </CadastroContainer>
   );
 };

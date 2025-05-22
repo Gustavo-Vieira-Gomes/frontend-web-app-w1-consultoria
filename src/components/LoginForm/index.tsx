@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import SubmitButton from "../../components/SubmitButton";
+import SubmitBtn from "../SubmitBtn";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import {
@@ -64,10 +64,10 @@ const onSubmit = (data: FormValues) => {
           <TextLink href="#">Esqueci minha senha</TextLink>
         </Row>
 
-        <SubmitButton text="Login" />
+        <SubmitBtn text="Login" />
 
         <Divider>
-          Não tem uma conta? <Link to="/cadastro"><TextLink>Cadastre-se</TextLink></Link>
+          Não tem uma conta? <Link to="/signup"><TextLink>Cadastre-se</TextLink></Link>
         </Divider>
       </Form>
     </Container>
