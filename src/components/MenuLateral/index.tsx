@@ -1,46 +1,58 @@
 import React, { useState } from "react";
-import { Container, Logo, Top, Middle, Bottom } from "./style";
-import MenuItem from "./MenuItem";
-import { ChartNoAxesCombined, Building, TrendingUp, CircleDollarSign, LogOut, Landmark , User, Banknote, ChevronUp} from "lucide-react";
-import { Link } from "react-router-dom";
+import { Container, Logo, Top, Middle, Bottom, DropdownDiv } from "./style";
+import SidebarItem from "./SidebarItem";
+import {
+  ChartNoAxesCombined,
+  Building,
+  TrendingUp,
+  CircleDollarSign,
+  LogOut,
+  Landmark,
+  User,
+  Banknote,
+  ChevronDown,
+} from "lucide-react";
+import { useLocation } from "react-router-dom";
 
-const MenuLateral: React.FC = () => {
-  const [patrimoniosOpen, setPatrimoniosOpen] = useState(false);
+const Sidebar: React.FC = () => {
+  const location = useLocation();
+  const [patrimoniosOpen, setPatrimoniosOpen] = useState(
+    location.pathname.startsWith("/ativos") || location.pathname.startsWith("/passivos")
+  );
 
   return (
     <Container>
       <Top>
-        <Logo src="W1_WhiteText.png" alt="W1 Logo"/>
+        <Logo src="W1_WhiteText.png" alt="W1 Logo" />
       </Top>
 
       <Middle>
-        <MenuItem icon={ChartNoAxesCombined} label="Dashboard" active />
-        <MenuItem icon={Building} label="Holding" />
-        <MenuItem
+        <SidebarItem icon={ChartNoAxesCombined} label="Dashboard" to="/dashboard" />
+        <SidebarItem icon={Building} label="Holding" to="/holding" />
+
+        <SidebarItem
           icon={CircleDollarSign}
           label="Patrimônios"
+          to=""
           onClick={() => setPatrimoniosOpen(!patrimoniosOpen)}
-          iconDropdown={ChevronUp}
+          iconDropdown={ChevronDown}
           rotateIcon={patrimoniosOpen}
-          active={patrimoniosOpen}
         />
-        {patrimoniosOpen && (
-          <div style={{ paddingLeft: 24 }}>
-            <MenuItem icon={Landmark } label="Ativos" />
-            <MenuItem icon={Banknote} label="Passivos" />
-          </div>
-        )}
-        <MenuItem icon={TrendingUp} label="Sucessão Pat." />
+
+        <DropdownDiv $open={patrimoniosOpen}>
+          <SidebarItem icon={Landmark} label="Ativos" to="/ativos" />
+          <SidebarItem icon={Banknote} label="Passivos" to="/passivos" />
+        </DropdownDiv>
+
+        <SidebarItem icon={TrendingUp} label="Sucessão Pat." to="/sucessao" />
       </Middle>
 
       <Bottom>
-        <MenuItem icon={User} label="Perfil" onlyIcon />
-        <Link to="/login">
-          <MenuItem icon={LogOut} label="Sair" onlyIcon />
-        </Link>
+        <SidebarItem icon={User} label="Perfil" onlyIcon to="/perfil" />
+        <SidebarItem icon={LogOut} label="Sair" onlyIcon to="/login" />
       </Bottom>
     </Container>
   );
 };
 
-export default MenuLateral;
+export default Sidebar;

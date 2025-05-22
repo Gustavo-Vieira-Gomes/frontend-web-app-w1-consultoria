@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import theme  from "../../styles/styled-theme";
 
 export const Container = styled.div`
   flex: 1;
@@ -40,7 +41,7 @@ export const CheckboxContainer = styled.label`
 
 export const TextLink = styled.a`
   font-size: 0.9rem;
-  color: #00aaff;
+  color: ${theme.color.main.primary.default};
   text-decoration: none;
 
   &:hover {
@@ -55,7 +56,7 @@ export const Divider = styled.div`
 `;
 
 export const ErrorMessage = styled.span`
-  color: red;
+  color: ${theme.color.error};
   font-size: 0.8rem;
   margin-top: -0.8rem;
   margin-bottom: 0.5rem;

@@ -1,9 +1,10 @@
-import styled from "styled-components";
+import styled, {css} from "styled-components";
+import theme from "../../styles/styled-theme";
 
 export const Container = styled.div`
   width: 220px;
   height: 100vh;
-  background-color: #0d0d0d;
+  background-color: ${theme.color.main.secondary.default};
   color: white;
   display: flex;
   flex-direction: column;
@@ -32,4 +33,18 @@ export const Bottom = styled.div`
   border-top: 1px solid #444;
 `;
 
+export const DropdownDiv = styled.div<{ $open?: boolean }>`
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: all 0.3s ease;
+  padding-left: 24px;
+
+  ${({ $open }) =>
+    $open &&
+    css`
+      max-height: 200px;
+      opacity: 1;
+    `}
+`;
 

@@ -1,9 +1,10 @@
 import styled from "styled-components";
+import theme  from "../../styles/styled-theme";
 
 export const Container = styled.div`
   flex: 1;
-  background-color: #0c0e0f;
-  color: white;
+  background-color: ${theme.color.main.secondary.default};
+  color: ${theme.color.white};
   display: flex;
   flex-direction: column;
   justify-content: center;

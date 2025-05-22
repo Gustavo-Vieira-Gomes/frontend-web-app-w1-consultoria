@@ -1,17 +1,18 @@
 import styled, {css} from "styled-components";
+import theme  from "../../../styles/styled-theme";
 
-export const MenuItemWrapper = styled.div<{ $active?: boolean; $onlyIcon?: boolean }>`
+export const SidebarItemWrapper = styled.div<{ $active?: boolean; $onlyIcon?: boolean }>`
   display: flex;
   align-items: center;
   padding: 10px 16px;
   cursor: pointer;
-  background-color: ${({ $active }) => ($active ? "#1DE9B6" : "transparent")};
-  color: ${({ $active }) => ($active ? "#000" : "#fff")};
+  background-color: ${({ $active }) => ($active ? theme.color.main.primary.default : "transparent")};
+  color: ${({ $active }) => ($active ? theme.color.main.secondary.default : theme.color.white)};
   border-radius: 8px;
   margin: 8px 8px;
    &:hover {
-    background-color: #1DE9B6;
-    color: #000;
+    background-color: ${theme.color.main.primary.default};
+    color: ${theme.color.main.secondary.default};
   }
 
 ${({ $onlyIcon }) =>
@@ -22,7 +23,7 @@ ${({ $onlyIcon }) =>
 
       &:hover {
         background-color: transparent;
-        color:  #1DE9B6;
+        color: ${theme.color.main.primary.default};
       }
     `}
 `;
